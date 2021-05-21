@@ -60,10 +60,11 @@
                 fillOpacity: 1
               });
             }
+            highlightLayer.openPopup();
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[45.889125232892496,4.692382787033731],[45.99504808114331,4.924949621877754]]);
+        }).fitBounds([[45.88539855436302,4.4155373703447305],[46.307904375465206,5.34580470972082]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -88,6 +89,13 @@
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -121,7 +129,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(225,89,137,0.0)',
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_COMMUNES_1');
@@ -129,7 +137,7 @@
         map.getPane('pane_COMMUNES_1').style['mix-blend-mode'] = 'normal';
         var layer_COMMUNES_1 = new L.geoJson(json_COMMUNES_1, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_COMMUNES_1',
             layerName: 'layer_COMMUNES_1',
             pane: 'pane_COMMUNES_1',
@@ -142,6 +150,13 @@
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -339,6 +354,13 @@
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -374,6 +396,13 @@
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -450,6 +479,13 @@
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -523,6 +559,13 @@
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -674,6 +717,13 @@
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -785,7 +835,7 @@
             return {
                 pane: 'pane_SIGNALISATIONINFORMATIONTOTEMREGION_7',
                 shape: 'square',
-                radius: 7.999999999999998,
+                radius: 8.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -823,6 +873,13 @@
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -934,7 +991,7 @@
         function style_SIGNALISATIONINFORMATIONRIS_8_0() {
             return {
                 pane: 'pane_SIGNALISATIONINFORMATIONRIS_8',
-                radius: 14.800000000000008,
+                radius: 14.8,
                 opacity: 1,
                 color: 'rgba(255,255,255,1.0)',
                 dashArray: '',
@@ -972,6 +1029,13 @@
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1121,6 +1185,13 @@
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1304,6 +1375,13 @@
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -1485,6 +1563,13 @@
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1668,6 +1753,13 @@
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -1693,7 +1785,7 @@
                 case 'Principale':
                     return {
                 pane: 'pane_AIREDACCUEIL_13',
-                radius: 16.800000000000004,
+                radius: 16.8,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
